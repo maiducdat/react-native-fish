@@ -1,4 +1,4 @@
-export const Colors = {
+const Colors = {
     black: '#000000',
     white: '#ffffff',
     gray: '#808080',
@@ -8,3 +8,5 @@ export const Colors = {
     headerColor2: '#241df4',
     headerTintColor2: '#ffffff'
 };
+
+export default Colors;

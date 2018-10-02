@@ -2,7 +2,7 @@ import {
     createBottomTabNavigator,
     createStackNavigator,
 } from 'react-navigation'
-import { Colors } from "../constants/Colors"
+import Colors from "../theme/Colors"
 import HomeScreen from '../views/screens/HomeScreen/HomeScreen'
 import SettingsScreen from '../views/screens/SettingsScreen/SettingsScreen'
 import DetailsScreen from '../views/screens/DetailsScreen/DetailsScreen'
