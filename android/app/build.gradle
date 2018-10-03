@@ -148,3 +148,9 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
+
+configurations.all {
+    resolutionStrategy {
+        force 'org.webkit:android-jsc:r224109'
+    }
+}

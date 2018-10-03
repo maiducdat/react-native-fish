@@ -14,6 +14,11 @@ class SettingsScreen extends React.Component {
                     title="Go to Details"
                     onPress={() => this.props.navigation.navigate('DetailsScreen')}
                 />
+                <View style={{ flex: 0.2}}/>
+                <Button
+                title="Show modal"
+                onPress={() => this.props.navigation.navigate('ModalScreen')}
+                />
             </View>
         );
     }

@@ -7,6 +7,7 @@ import HomeScreen from '../views/screens/HomeScreen/HomeScreen'
 import SettingsScreen from '../views/screens/SettingsScreen/SettingsScreen'
 import DetailsScreen from '../views/screens/DetailsScreen/DetailsScreen'
 import ModalScreen from '../views/screens/ModalScreen/ModalScreen'
+import NewItem from '../views/screens/NewItem/NewItem'
 /**********************************************************************************************************************/
 
 const HomeStack = createStackNavigator(
@@ -30,7 +31,7 @@ const HomeStack = createStackNavigator(
                     }
                 })
         },
-        ModalScreen: ModalScreen
+        NewItem: NewItem
     },
     {
         mode: 'modal',
@@ -40,20 +41,30 @@ const HomeStack = createStackNavigator(
 
 const SettingsStack = createStackNavigator(
     {
-        SettingsScreen: SettingsScreen,
-        DetailsScreen: DetailsScreen,
+        Main: {
+            screen: createStackNavigator(
+                {
+                    SettingsScreen: SettingsScreen,
+                    DetailsScreen: DetailsScreen,
+                },
+                {
+                    initialRouteName: 'SettingsScreen',
+                    navigationOptions: {
+                        headerStyle: {
+                            backgroundColor: Colors.headerColor2
+                        },
+                        headerTintColor: Colors.headerTintColor2,
+                        headerTitleStyle: {
+                            fontWeight: 'bold'
+                        }
+                    }
+                })
+        },
+        ModalScreen: ModalScreen
     },
     {
-        initialRouteName: 'SettingsScreen',
-        navigationOptions: {
-            headerStyle: {
-                backgroundColor: Colors.headerColor2
-            },
-            headerTintColor: Colors.headerTintColor2,
-            headerTitleStyle: {
-                fontWeight: 'bold'
-            }
-        }
+        mode: 'modal',
+        headerMode: 'none',
     }
 );
 

@@ -20,4 +20,4 @@ WHAT DOES IT HAVE?
         import Item from '../../components/Item';  
     + to awesome:  
         import Item from 'components/Item';  
-
+- use MobX V5 (need to upgrade JavaScriptCore https://github.com/react-community/jsc-android-buildscripts#how-to-use-it-with-my-react-native-app)

@@ -8,22 +8,19 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import RootNavigator from './Navigator'
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import { Provider } from "mobx-react"
+import RootNavigator from './Navigator';
+import stores from "../stores";
 
 type Props = {};
 export default class App extends Component<Props> {
-  render() {
-    return (
-      <RootNavigator/>
-    );
-  }
+    render() {
+        return (
+            <Provider  {...stores}>
+                <RootNavigator/>
+            </Provider>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
