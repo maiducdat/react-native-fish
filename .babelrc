@@ -1,3 +1,17 @@
 {
-  "presets": ["module:metro-react-native-babel-preset"]
+  "presets": ["module:metro-react-native-babel-preset"],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "app": "./src/app",
+        "assets": "./src/assets",
+        "constants": "./src/constants",
+        "store": "./src/store",
+        "theme": "./src/theme",
+        "screens": "./src/views/screens",
+        "components": "./src/views/components"
+      }
+    }]
+  ]
 }

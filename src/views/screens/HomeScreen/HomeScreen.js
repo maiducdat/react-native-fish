@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, Button, FlatList } from 'react-native'
-import Item from '../../components/Item';
+import Item from 'components/Item';
 /**********************************************************************************************************************/
 
 class HomeScreen extends React.Component {
