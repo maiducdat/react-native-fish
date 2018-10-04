@@ -12,6 +12,12 @@
         "screens": "./src/views/screens",
         "components": "./src/views/components"
       }
-    }]
+    }],
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ]
   ]
 }
