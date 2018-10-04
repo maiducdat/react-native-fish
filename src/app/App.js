@@ -11,9 +11,14 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Provider } from "mobx-react"
 import RootNavigator from './Navigator';
 import stores from "../stores";
+import storage from "storage";
+/**********************************************************************************************************************/
 
 type Props = {};
 export default class App extends Component<Props> {
+    componentDidMount() {
+        storage.saveString(storage.Keys.OPEN_TIME, new Date().toLocaleString());
+    }
     render() {
         return (
             <Provider  {...stores}>

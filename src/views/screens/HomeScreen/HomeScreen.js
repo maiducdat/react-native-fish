@@ -3,19 +3,28 @@ import { StyleSheet, Text, View, Button, TouchableOpacity, TouchableHighlight, T
 import { inject, observer } from 'mobx-react';
 import Item from 'components/Item';
 import NewItem from '../NewItem/NewItem';
+import storage from "storage";
 /**********************************************************************************************************************/
 @inject("listStore")
 @observer
 class HomeScreen extends React.Component {
-    static navigationOptions = {
-        title: 'HomeScreen',
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: "HomeScreen "
+        };
     };
     constructor (props) {
         super(props);
         this.state = {
             text: '',
-            showInput: false
-        }
+            showInput: false,
+            openTime: ""
+        };
+
+    }
+    async componentDidMount() {
+        let openTime = await storage.loadString(storage.Keys.OPEN_TIME);
+        this.setState({openTime});
     }
     toggleInput () {
         this.setState({ showInput: !this.state.showInput });
@@ -41,6 +50,7 @@ class HomeScreen extends React.Component {
         const { list } = this.props.listStore;
         return (
             <View style={{ flex: 1}}>
+                <Text>open time: {this.state.openTime}</Text>
                 {!list.length ? <NoList /> : null}
                 <View style={{flex:1}}>
                     {list.map((l, i) => {
