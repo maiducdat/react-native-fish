@@ -10,7 +10,9 @@
         "store": "./src/store",
         "theme": "./src/theme",
         "screens": "./src/views/screens",
-        "components": "./src/views/components"
+        "components": "./src/views/components",
+        "lib": "./src/lib",
+        "storage": "./src/lib/storage/storage"
       }
     }],
     [
