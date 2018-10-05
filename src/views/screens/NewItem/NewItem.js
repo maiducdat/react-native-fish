@@ -11,10 +11,10 @@ class NewItem extends Component {
             newItem: ''
         };
     }
-    addItem () {
+    addCar () {
         if (this.state.newItem === '') return;
-        const item = this.props.navigation.getParam("item", {});
-        this.props.listStore.addItem(item, this.state.newItem);
+        const person = this.props.navigation.getParam("person", {});
+        this.props.listStore.addCar(person, this.state.newItem);
         this.setState({
             newItem: ''
         });
@@ -25,24 +25,32 @@ class NewItem extends Component {
         });
     }
     render () {
-        const item = this.props.navigation.getParam("item", {});
+        const list = this.props.listStore.list;
+        const id = this.props.navigation.getParam("person", {}).id;
+        let person = {};
+        list.map((p)=>{
+            if(parseInt(p.id) == parseInt(id)) {
+                person = p;
+            }
+        });
+        const cars = person.cars;
         return (
             <View style={{flex: 1}}>
                 <View style={styles.heading}>
-                    <Text style={styles.headingText}>{item.name}</Text>
+                    <Text style={styles.headingText}>{person.name}</Text>
                     <Text
                         onPress={() => this.props.navigation.goBack()}
                         style={styles.closeButton}>&times;</Text>
                 </View>
-                {!item.items.length && <NoItems />}
-                {item.items.length ? <Items items={item.items} /> : <View />}
+                {!person.cars.length && <NoItems />}
+                {person.cars.length ? <Items cars={cars} /> : <View />}
                 <View style={{flexDirection: 'row'}}>
                     <TextInput
                         value={this.state.newItem}
                         onChangeText={(text) => this.updateNewItem(text)}
                         style={styles.input} />
                     <TouchableHighlight
-                        onPress={this.addItem.bind(this)}
+                        onPress={this.addCar.bind(this)}
                         style={styles.button}>
                         <Text>Add</Text>
                     </TouchableHighlight>
@@ -54,13 +62,13 @@ class NewItem extends Component {
 
 const NoItems = () => (
     <View style={styles.noItem}>
-        <Text style={styles.noItemText}>No Items, Add Items To Get Started</Text>
+        <Text style={styles.noItemText}>No cars, Add car to this person</Text>
     </View>
 );
-const Items = ({items}) => (
+const Items = ({cars}) => (
     <View style={{flex: 1, paddingTop: 10}}>
-        {items.map((item, i) => {
-            return <Text style={styles.item} key={i}>• {item}</Text>
+        {cars.map((car, i) => {
+            return <Text style={styles.item} key={i}>• {car.name}</Text>
         })
         }
     </View>

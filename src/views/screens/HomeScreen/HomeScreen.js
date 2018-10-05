@@ -4,6 +4,7 @@ import { inject, observer } from 'mobx-react';
 import Item from 'components/Item';
 import NewItem from '../NewItem/NewItem';
 import storage from "storage";
+import DBManager from "../../../lib/DBManager";
 /**********************************************************************************************************************/
 @inject("listStore")
 @observer
@@ -20,7 +21,7 @@ class HomeScreen extends React.Component {
             showInput: false,
             openTime: ""
         };
-
+        this.props.listStore.loadOldList();
     }
     async componentDidMount() {
         let openTime = await storage.loadString(storage.Keys.OPEN_TIME);
@@ -30,37 +31,37 @@ class HomeScreen extends React.Component {
         this.setState({ showInput: !this.state.showInput });
     }
     addListItem () {
-        this.props.listStore.addListItem(this.state.text);
+        this.props.listStore.addPerson(this.state.text);
         this.setState({
             text: '',
             showInput: !this.state.showInput
         })
     }
-    removeListItem (item) {
-        this.props.listStore.removeListItem(item)
+    removeListItem (person) {
+        this.props.listStore.removePerson(person)
     }
     updateText (text) {
         this.setState({text})
     }
-    addItemToList (item) {
-        this.props.navigation.navigate('NewItem', {item})
+    addItemToList (person) {
+        this.props.navigation.navigate('NewItem', {person})
     }
     render() {
         const { showInput } = this.state;
-        const { list } = this.props.listStore;
+        const list = this.props.listStore.list;
         return (
             <View style={{ flex: 1}}>
                 <Text>open time: {this.state.openTime}</Text>
                 {!list.length ? <NoList /> : null}
                 <View style={{flex:1}}>
-                    {list.map((l, i) => {
+                    {list.map((person, i) => {
                         return <View key={i} style={styles.itemContainer}>
                             <Text
                                 style={styles.item}
-                                onPress={this.addItemToList.bind(this, l)}>{l.name.toUpperCase()}</Text>
+                                onPress={this.addItemToList.bind(this, person)}>{person.name.toUpperCase()}</Text>
                             <Text
                                 style={styles.deleteItem}
-                                onPress={this.removeListItem.bind(this, l)}>Remove</Text>
+                                onPress={this.removeListItem.bind(this, person)}>Remove</Text>
                         </View>
                     })}
                 </View>
@@ -72,8 +73,8 @@ class HomeScreen extends React.Component {
                     }
                     style={styles.button}>
                     <Text style={styles.buttonText}>
-                        {this.state.text === '' && '+ New List'}
-                        {this.state.text !== '' && '+ Add New List Item'}
+                        {this.state.text === '' && '+ New Person'}
+                        {this.state.text !== '' && '+ Add Person to the list'}
                     </Text>
                 </TouchableHighlight>
                 {showInput && <TextInput
@@ -88,7 +89,7 @@ export default HomeScreen;
 
 const NoList = () => (
     <View style={styles.noList}>
-        <Text style={styles.noListText}>No List, Add List To Get Started</Text>
+        <Text style={styles.noListText}>No person, Add person Get Started</Text>
     </View>
 );
 

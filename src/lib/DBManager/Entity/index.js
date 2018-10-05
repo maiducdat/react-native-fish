@@ -1,8 +1,8 @@
-import ListStore from './ListStore';
+import Person from './Person';
+import Car from './Car';
 /**********************************************************************************************************************/
 
-const listStore = new ListStore();
-
-export default {
-    listStore
-};
+export default [
+    Person,
+    Car
+];

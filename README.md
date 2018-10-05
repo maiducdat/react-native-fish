@@ -7,6 +7,13 @@ Please learn how to create mobile app with react-native before use and fuck this
 
 WHAT DOES IT HAVE?
 ------------------
+- react-native 0.57
+- react-navigation
+- MobX v5
+- Realm
+
+WHAT I HAVE DONE
+------------------
 - start with react-native init (not create-react-native-app from FB)
 - use react-navigator:
     + tab navigator
@@ -21,3 +28,5 @@ WHAT DOES IT HAVE?
     + to awesome:  
         import Item from 'components/Item';  
 - use MobX V5 (need to upgrade JavaScriptCore https://github.com/react-community/jsc-android-buildscripts#how-to-use-it-with-my-react-native-app)
+- use Realm to manage database
+- use react-native-secure-key-store to store encryption key (use with Realm)

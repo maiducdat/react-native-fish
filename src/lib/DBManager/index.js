@@ -1,8 +1,6 @@
-import ListStore from './ListStore';
+import DataBase from './DataBase';
 /**********************************************************************************************************************/
 
-const listStore = new ListStore();
+const DBManager = new DataBase();
 
-export default {
-    listStore
-};
+export default DBManager;

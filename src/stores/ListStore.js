@@ -1,14 +1,16 @@
 import {observable, computed, action} from 'mobx';
-import { AsyncStorage } from 'react-native';
-
-let index = 0;
+import DBManager from "../lib/DBManager";
+/**********************************************************************************************************************/
 
 export default class ListStore {
-    @observable list = [{
-        name: "fish123",
-        items: [],
-        index: 1
-    }];
+    @observable list = [];
+
+    constructor() {
+    }
+
+    @action loadOldList() {
+        this.list = DBManager.getListPerson();
+    }
 
     @action setList(list) {
         this.list = list;
@@ -18,26 +20,20 @@ export default class ListStore {
         return this.list;
     }
 
-    @action addListItem (item) {
-        this.list.push({
-            name: item,
-            items: [],
-            index
+    @action addPerson (item) {
+        DBManager.addPerson(item, ()=>{
+            this.loadOldList();
         });
-        index++
     }
 
-    @action removeListItem (item) {
-        this.list = this.list.filter((l) => {
-            return l.index !== item.index
-        })
+    @action removePerson (person) {
+        DBManager.removePerson(person);
+        this.loadOldList();
     }
 
-    @action addItem(item, name) {
-        this.list.forEach((l) => {
-            if (l.index === item.index) {
-                l.items.push(name)
-            }
-        })
+    @action addCar(person, name) {
+        DBManager.addCar(person, name, ()=>{
+            this.loadOldList();
+        });
     }
 }
