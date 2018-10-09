@@ -30,3 +30,8 @@ WHAT I HAVE DONE
 - use MobX V5 (need to upgrade JavaScriptCore https://github.com/react-community/jsc-android-buildscripts#how-to-use-it-with-my-react-native-app)
 - use Realm to manage database
 - use react-native-secure-key-store to store encryption key (use with Realm)
+- fix issue in XCode 10:
+    + react native build input file cannot be found double conversion:
+        * cd node_modules/react-native/scripts && ./ios-install-third-party.sh && cd ../../../
+        * cd node_modules/react-native/third-party/glog-0.3.5/ && ../../scripts/ios-configure-glog.sh && cd ../../../../
+    + 

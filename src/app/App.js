@@ -11,7 +11,7 @@ import {View} from 'react-native';
 import {Provider} from "mobx-react"
 import RootNavigator from './Navigator';
 import stores from "../stores";
-import storage from "storage";
+import storage from "../lib/storage/storage";
 import DataBase from "../lib/DBManager/DataBase";
 /**********************************************************************************************************************/
 
