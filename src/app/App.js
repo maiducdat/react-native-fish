@@ -13,6 +13,8 @@ import RootNavigator from './Navigator';
 import stores from "../stores";
 import storage from "../lib/storage/storage";
 import DataBase from "../lib/DBManager/DataBase";
+import RNLanguages from 'react-native-languages';
+import LangManager from '../lib/LangManager';
 /**********************************************************************************************************************/
 
 type Props = {};
@@ -28,9 +30,16 @@ export default class App extends Component<Props> {
             }, 500);
         });
     }
+    componentWillMount() {
+        RNLanguages.addEventListener('change', this._onLanguagesChange);
+    }
     componentDidMount() {
+        RNLanguages.removeEventListener('change', this._onLanguagesChange);
         storage.saveString(storage.Keys.OPEN_TIME, new Date().toLocaleString());
     }
+    _onLanguagesChange = ({ language }) => {
+        LangManager.locale = language;
+    };
     render() {
         if(!this.state.isDBReady) {
             return <View/>;

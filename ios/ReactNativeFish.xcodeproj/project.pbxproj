@@ -24,6 +24,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		186ECD44140A4D32B857E144 /* libRNLanguages.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7500FE643BB84FAEA5C0ED46 /* libRNLanguages.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -40,6 +41,7 @@
 		32D39BDD7D534182ACBD3BF5 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FA7C745A5744FBBA8F0BE2 /* libc++.tbd */; };
 		537D6FD45EA64BCEBE7657B0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BB34C454B2414E7891B03371 /* libz.tbd */; };
 		66957A50B9BE4DF588486777 /* libRNSecureKeyStore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93959BDA9CAC40EDB9ED8CA4 /* libRNSecureKeyStore.a */; };
+		6E499778F57D4606B5AFA52C /* libRNLanguages-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC6582B437674164858A5EAD /* libRNLanguages-tvOS.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 /* End PBXBuildFile section */
@@ -206,6 +208,20 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNSecureKeyStore;
 		};
+		3BC8B5F2216DFB8B00DC790B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 525DF4FDA91B4468AD6FF2BA /* RNLanguages.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNLanguages;
+		};
+		3BC8B5F4216DFB8B00DC790B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 525DF4FDA91B4468AD6FF2BA /* RNLanguages.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28471D9B043800D4039D;
+			remoteInfo = "RNLanguages-tvOS";
+		};
 		3DAD3E831DF850E9000B6D8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */;
@@ -359,11 +375,14 @@
 		2D02E4901E0B4A5D006451C7 /* ReactNativeFish-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReactNativeFish-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		44CC483360F34FFB91D18343 /* RealmReact.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RealmReact.xcodeproj; path = "../node_modules/realm/react-native/ios/RealmReact.xcodeproj"; sourceTree = "<group>"; };
+		525DF4FDA91B4468AD6FF2BA /* RNLanguages.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNLanguages.xcodeproj; path = "../node_modules/react-native-languages/ios/RNLanguages.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		7500FE643BB84FAEA5C0ED46 /* libRNLanguages.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNLanguages.a; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8B6EC9DBE15D42D9B2B94C7D /* RNSecureKeyStore.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSecureKeyStore.xcodeproj; path = "../node_modules/react-native-secure-key-store/ios/RNSecureKeyStore.xcodeproj"; sourceTree = "<group>"; };
 		93959BDA9CAC40EDB9ED8CA4 /* libRNSecureKeyStore.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSecureKeyStore.a; sourceTree = "<group>"; };
+		AC6582B437674164858A5EAD /* libRNLanguages-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNLanguages-tvOS.a"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		BB34C454B2414E7891B03371 /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E123FFED3F564DC589DDA37B /* libRealmReact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRealmReact.a; sourceTree = "<group>"; };
@@ -398,6 +417,7 @@
 				32D39BDD7D534182ACBD3BF5 /* libc++.tbd in Frameworks */,
 				537D6FD45EA64BCEBE7657B0 /* libz.tbd in Frameworks */,
 				66957A50B9BE4DF588486777 /* libRNSecureKeyStore.a in Frameworks */,
+				186ECD44140A4D32B857E144 /* libRNLanguages.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +433,7 @@
 				2D02E4C61E0B4AEC006451C7 /* libRCTSettings-tvOS.a in Frameworks */,
 				2D02E4C71E0B4AEC006451C7 /* libRCTText-tvOS.a in Frameworks */,
 				2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */,
+				6E499778F57D4606B5AFA52C /* libRNLanguages-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +579,8 @@
 			children = (
 				E123FFED3F564DC589DDA37B /* libRealmReact.a */,
 				93959BDA9CAC40EDB9ED8CA4 /* libRNSecureKeyStore.a */,
+				7500FE643BB84FAEA5C0ED46 /* libRNLanguages.a */,
+				AC6582B437674164858A5EAD /* libRNLanguages-tvOS.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -574,6 +597,15 @@
 			isa = PBXGroup;
 			children = (
 				3BA6EAB3216B33A6005221E3 /* libRealmReact.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BC8B5EE216DFB8B00DC790B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BC8B5F3216DFB8B00DC790B /* libRNLanguages.a */,
+				3BC8B5F5216DFB8B00DC790B /* libRNLanguages-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -613,6 +645,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				44CC483360F34FFB91D18343 /* RealmReact.xcodeproj */,
 				8B6EC9DBE15D42D9B2B94C7D /* RNSecureKeyStore.xcodeproj */,
+				525DF4FDA91B4468AD6FF2BA /* RNLanguages.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -825,6 +858,10 @@
 					ProjectRef = 44CC483360F34FFB91D18343 /* RealmReact.xcodeproj */;
 				},
 				{
+					ProductGroup = 3BC8B5EE216DFB8B00DC790B /* Products */;
+					ProjectRef = 525DF4FDA91B4468AD6FF2BA /* RNLanguages.xcodeproj */;
+				},
+				{
 					ProductGroup = 3BA6EA88216B33A6005221E3 /* Products */;
 					ProjectRef = 8B6EC9DBE15D42D9B2B94C7D /* RNSecureKeyStore.xcodeproj */;
 				},
@@ -985,6 +1022,20 @@
 			fileType = archive.ar;
 			path = libRNSecureKeyStore.a;
 			remoteRef = 3BA6EAB5216B33A6005221E3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3BC8B5F3216DFB8B00DC790B /* libRNLanguages.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNLanguages.a;
+			remoteRef = 3BC8B5F2216DFB8B00DC790B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3BC8B5F5216DFB8B00DC790B /* libRNLanguages-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNLanguages-tvOS.a";
+			remoteRef = 3BC8B5F4216DFB8B00DC790B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		3DAD3E841DF850E9000B6D8A /* libRCTImage-tvOS.a */ = {
@@ -1255,12 +1306,15 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\nealmsrc/**",
 					"$(SRCROOT)..\node_modules\neact-native-secure-key-storeios/**",
+					"$(SRCROOT)/../node_modules/react-native-languages/ios",
 				);
 				INFOPLIST_FILE = ReactNativeFishTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1283,12 +1337,15 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\nealmsrc/**",
 					"$(SRCROOT)..\node_modules\neact-native-secure-key-storeios/**",
+					"$(SRCROOT)/../node_modules/react-native-languages/ios",
 				);
 				INFOPLIST_FILE = ReactNativeFishTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1312,6 +1369,7 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\nealmsrc/**",
 					"$(SRCROOT)..\node_modules\neact-native-secure-key-storeios/**",
+					"$(SRCROOT)/../node_modules/react-native-languages/ios",
 				);
 				INFOPLIST_FILE = ReactNativeFish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1335,6 +1393,7 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\nealmsrc/**",
 					"$(SRCROOT)..\node_modules\neact-native-secure-key-storeios/**",
+					"$(SRCROOT)/../node_modules/react-native-languages/ios",
 				);
 				INFOPLIST_FILE = ReactNativeFish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1365,11 +1424,14 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\nealmsrc/**",
 					"$(SRCROOT)..\node_modules\neact-native-secure-key-storeios/**",
+					"$(SRCROOT)/../node_modules/react-native-languages/ios",
 				);
 				INFOPLIST_FILE = "ReactNativeFish-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1401,11 +1463,14 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\nealmsrc/**",
 					"$(SRCROOT)..\node_modules\neact-native-secure-key-storeios/**",
+					"$(SRCROOT)/../node_modules/react-native-languages/ios",
 				);
 				INFOPLIST_FILE = "ReactNativeFish-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1436,11 +1501,14 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\nealmsrc/**",
 					"$(SRCROOT)..\node_modules\neact-native-secure-key-storeios/**",
+					"$(SRCROOT)/../node_modules/react-native-languages/ios",
 				);
 				INFOPLIST_FILE = "ReactNativeFish-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1471,11 +1539,14 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\nealmsrc/**",
 					"$(SRCROOT)..\node_modules\neact-native-secure-key-storeios/**",
+					"$(SRCROOT)/../node_modules/react-native-languages/ios",
 				);
 				INFOPLIST_FILE = "ReactNativeFish-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);

@@ -4,6 +4,7 @@ import { inject, observer } from 'mobx-react';
 import NewItem from '../NewItem/NewItem';
 import storage from "../../../lib/storage/storage";
 import DBManager from "../../../lib/DBManager";
+import LangManager from '../../../lib/LangManager';
 /**********************************************************************************************************************/
 @inject("listStore")
 @observer
@@ -52,6 +53,7 @@ class HomeScreen extends React.Component {
             <View style={{ flex: 1}}>
                 <Text>open time: {this.state.openTime}</Text>
                 {!list.length ? <NoList /> : null}
+                <Text>{LangManager.t('title')}</Text>
                 <View style={{flex:1}}>
                     {list.map((person, i) => {
                         return <View key={i} style={styles.itemContainer}>

@@ -8,12 +8,14 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.1.2",
+    "i18n-js": "^3.0.11",
     "jsc-android": "224109.x.x",
     "mobx": "^5.5.0",
     "mobx-react": "^5.2.8",
     "prop-types": "^15.6.2",
     "react": "16.5.0",
     "react-native": "0.57.1",
+    "react-native-languages": "^3.0.0",
     "react-native-secure-key-store": "^1.0.9",
     "react-navigation": "^2.17.0",
     "realm": "^2.17.0"
