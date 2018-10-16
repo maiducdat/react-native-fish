@@ -1,5 +1,5 @@
 import { AsyncStorage } from "react-native";
-import StorageKeys from "constants/StorageKeys";
+import StorageKeys from "../../constants/StorageKeys";
 /**********************************************************************************************************************/
 
 module.exports = {

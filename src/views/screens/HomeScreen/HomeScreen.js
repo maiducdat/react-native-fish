@@ -1,9 +1,8 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button, TouchableOpacity, TouchableHighlight, TextInput, FlatList } from 'react-native';
 import { inject, observer } from 'mobx-react';
-import Item from 'components/Item';
 import NewItem from '../NewItem/NewItem';
-import storage from "storage";
+import storage from "../../../lib/storage/storage";
 import DBManager from "../../../lib/DBManager";
 /**********************************************************************************************************************/
 @inject("listStore")

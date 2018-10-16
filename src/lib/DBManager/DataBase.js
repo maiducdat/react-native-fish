@@ -1,6 +1,6 @@
 import Realm from "realm";
 import RNSecureKeyStore from "react-native-secure-key-store";
-import RealmKeys from 'constants/RealmKeys';
+import RealmKeys from '../../constants/RealmKeys';
 import Entity from './Entity';
 /**********************************************************************************************************************/
 let instance = null;
