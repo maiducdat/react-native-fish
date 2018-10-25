@@ -1,5 +1,5 @@
 import Realm from 'realm';
-import RealmKeys from 'constants/RealmKeys';
+import RealmKeys from '../../../constants/RealmKeys';
 /**********************************************************************************************************************/
 
 export default class Car extends Realm.Object {

@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.1.2",
+    "axios": "^0.18.0",
     "i18n-js": "^3.0.11",
     "jsc-android": "224109.x.x",
     "mobx": "^5.5.0",

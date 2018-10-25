@@ -6,7 +6,9 @@ const Colors = {
     headerColor1: '#f4511e',
     headerTintColor1: '#ffffff',
     headerColor2: '#241df4',
-    headerTintColor2: '#ffffff'
+    headerTintColor2: '#ffffff',
+    headerColor3: '#1f6318',
+    headerTintColor3: '#ffffff'
 };
 
 export default Colors;

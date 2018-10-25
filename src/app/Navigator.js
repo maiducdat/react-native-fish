@@ -5,6 +5,7 @@ import {
 import Colors from "../theme/Colors"
 import HomeScreen from '../views/screens/HomeScreen/HomeScreen'
 import SettingsScreen from '../views/screens/SettingsScreen/SettingsScreen'
+import ServiceTestScreen from '../views/screens/ServiceTestScreen/ServiceTestScreen'
 import DetailsScreen from '../views/screens/DetailsScreen/DetailsScreen'
 import ModalScreen from '../views/screens/ModalScreen/ModalScreen'
 import NewItem from '../views/screens/NewItem/NewItem'
@@ -68,10 +69,39 @@ const SettingsStack = createStackNavigator(
     }
 );
 
+const ServiceTestStack = createStackNavigator(
+    {
+        Main: {
+            screen: createStackNavigator(
+                {
+                    ServiceTestScreen: ServiceTestScreen,
+                },
+                {
+                    initialRouteName: 'ServiceTestScreen',
+                    navigationOptions: {
+                        headerStyle: {
+                            backgroundColor: Colors.headerColor3
+                        },
+                        headerTintColor: Colors.headerTintColor3,
+                        headerTitleStyle: {
+                            fontWeight: 'bold'
+                        }
+                    }
+                })
+        },
+        ModalScreen: ModalScreen
+    },
+    {
+        mode: 'modal',
+        headerMode: 'none',
+    }
+);
+
 const RootNavigator = createBottomTabNavigator(
     {
         HomeScreen: HomeStack,
-        SettingsScreen: SettingsStack
+        SettingsScreen: SettingsStack,
+        ServiceTestScreen: ServiceTestStack
     },
     {
         initialRouteName: 'HomeScreen',
