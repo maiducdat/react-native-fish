@@ -37,3 +37,4 @@ WHAT I HAVE DONE
     + 
 - use react-native-languages and i18n-js to manage multiple languages
 - use axios to create service manager
+- use react-native-indicators with a lot of indicator type

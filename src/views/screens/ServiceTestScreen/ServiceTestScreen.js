@@ -2,6 +2,7 @@ import React from 'react'
 import {View, Button, Alert, StyleSheet, Text, Image} from 'react-native'
 import ServiceManager from "../../../lib/ServiceManager";
 import Images from "../../../theme/Images";
+import {UIActivityIndicator} from 'react-native-indicators';
 /**********************************************************************************************************************/
 
 class ServiceTestScreen extends React.Component {
@@ -11,12 +12,15 @@ class ServiceTestScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            isLoading: false,
             pageIndex: 1,
             userList: []
         }
     }
     createUser() {
+        this.setState({isLoading: true});
         ServiceManager.createUser({name: 'Dat', job: 'Dev'}, (response)=>{
+            this.setState({isLoading: false});
             Alert.alert(
                 'Success',
                 'You have created new user',
@@ -27,6 +31,7 @@ class ServiceTestScreen extends React.Component {
                 { cancelable: false }
             )
         }, (error)=>{
+            this.setState({isLoading: false});
             Alert.alert(
                 'Fail',
                 'There is something wrong',
@@ -39,16 +44,19 @@ class ServiceTestScreen extends React.Component {
         });
     }
     getNextUserList() {
+        this.setState({isLoading: true});
         ServiceManager.getUser({page: this.state.pageIndex}, (response)=>{
             let newIndex = this.state.pageIndex + 1;
             if(newIndex > 4) {
                 newIndex = 1;
             }
             this.setState({
+                isLoading: false,
                 pageIndex: newIndex,
                 userList: response.data.data
             });
         }, (error)=>{
+            this.setState({isLoading: false});
             Alert.alert(
                 'Fail',
                 'There is something wrong',
@@ -63,7 +71,14 @@ class ServiceTestScreen extends React.Component {
     render() {
         console.log("fish log:", JSON.stringify(this.state));
         return (
-            <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
+            <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }} pointerEvents={this.state.isLoading ? 'none' : 'auto'}>
+                {
+                    this.state.isLoading ? (
+                        <View style={styles.loading}>
+                            <UIActivityIndicator color='white' />
+                        </View>
+                    ) : null
+                }
                 <View style={styles.buttonBox}>
                     <Button
                         title="Create New User"
@@ -116,5 +131,16 @@ const styles = StyleSheet.create({
     },
     user: {
         padding: 10
+    },
+    loading: {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 });
